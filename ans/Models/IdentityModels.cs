@@ -25,6 +25,10 @@ namespace ans.Models
         {
         }
 
+        public DbSet<Project> Projects { get; set; }
+        public DbSet<Team> Teams { get; set; }
+        public DbSet<TaskProject> TaskProjects { get; set; }
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();

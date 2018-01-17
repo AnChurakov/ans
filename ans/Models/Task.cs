@@ -6,7 +6,7 @@ using System.Data.Entity;
 
 namespace ans.Models
 {
-    public class Task : DbContext
+    public class TaskProject : DbContext
     {
         public Guid Id { get; set; }
 
