@@ -22,7 +22,6 @@ namespace ans.Models
         public DateTime DateEnd { get; set; }
 
         //Ссылка на проект
-
         public virtual Project Projects { get; set; }
     }
 }

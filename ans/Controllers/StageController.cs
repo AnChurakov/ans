@@ -3,17 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using ans.Models;
 
 namespace ans.Controllers
 {
-    public class HomeController : Controller
+    public class StageController : Controller
     {
-        [Authorize]
+        // GET: Stage
         public ActionResult Index()
-        {            
+        {
             return View();
         }
-
     }
 }
