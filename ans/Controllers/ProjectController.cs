@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using ans.Models;
@@ -29,10 +30,23 @@ namespace ans.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public string CreateProject(string Name)
+        public async Task<ActionResult> CreateProject(string Name, string LinkProject)
         {
+            if (ModelState.IsValid)
+            {
+                Project pr = new Project
+                {
+                    Id = Guid.NewGuid(),
+                    Name = Name,
+                    LinkProject = LinkProject,
+                    DateStart = DateTime.Now,
+                    DateEnd = DateTime.Now
+                };
+                
 
-            return Name;
+            }
+
+            return View();
         }
 
     }

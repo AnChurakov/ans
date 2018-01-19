@@ -225,6 +225,14 @@
     <Compile Include="Migrations\201801190613307_UpdateTables.Designer.cs">
       <DependentUpon>201801190613307_UpdateTables.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801191104306_NewMigrate.cs" />
+    <Compile Include="Migrations\201801191104306_NewMigrate.Designer.cs">
+      <DependentUpon>201801191104306_NewMigrate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801191732546_UpdateStage.cs" />
+    <Compile Include="Migrations\201801191732546_UpdateStage.Designer.cs">
+      <DependentUpon>201801191732546_UpdateStage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -298,6 +306,8 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Project\Index.cshtml" />
     <Content Include="Views\Project\Create.cshtml" />
+    <Content Include="Views\Status\Index.cshtml" />
+    <Content Include="Views\Stage\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201801150644101_InitialCreate.resx">
@@ -318,6 +328,12 @@
     <EmbeddedResource Include="Migrations\201801190613307_UpdateTables.resx">
       <DependentUpon>201801190613307_UpdateTables.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801191104306_NewMigrate.resx">
+      <DependentUpon>201801191104306_NewMigrate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801191732546_UpdateStage.resx">
+      <DependentUpon>201801191732546_UpdateStage.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -334,8 +350,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Position\" />
-    <Folder Include="Views\Stage\" />
-    <Folder Include="Views\Status\" />
     <Folder Include="Views\Task\" />
     <Folder Include="Views\Team\" />
   </ItemGroup>

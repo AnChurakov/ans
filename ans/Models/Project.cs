@@ -18,13 +18,12 @@ namespace ans.Models
         public string Name { get; set; }
 
         //Дата завершения проекта
-        [Required]
         [Display(Name = "Дата завершения проекта")]
         [DataType(DataType.DateTime)]
         public DateTime DateEnd { get; set; }
 
         //Дата начала проекта
-        [Required]
+        [Required(ErrorMessage = "Это обязательное поле")]
         [Display(Name = "Дата начала проекта")]
         [DataType(DataType.DateTime)]
         public DateTime DateStart { get; set; }
@@ -34,7 +33,7 @@ namespace ans.Models
         public int Procent { get; set; }
 
         //Ссылка на проекта
-        [Required]
+        [Required(ErrorMessage = "Это обязательное поле")]
         [Display(Name = "Ссылка на проект")]
         public string LinkProject { get; set; }
 
