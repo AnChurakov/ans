@@ -308,6 +308,7 @@
     <Content Include="Views\Project\Create.cshtml" />
     <Content Include="Views\Status\Index.cshtml" />
     <Content Include="Views\Stage\Index.cshtml" />
+    <Content Include="Views\_LocalMenu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201801150644101_InitialCreate.resx">

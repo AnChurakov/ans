@@ -5,6 +5,8 @@
 
 <h2>@ViewBag.Title</h2>
 
+@Html.Partial("~/Views/_LocalMenu.cshtml")
+
 @if (ViewBag.Check == 1)
 {
     <div class="alert alert-success">@ViewBag.Message</div>
