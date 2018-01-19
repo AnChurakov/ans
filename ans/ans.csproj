@@ -192,6 +192,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PositionController.cs" />
     <Compile Include="Controllers\ProjectController.cs" />
     <Compile Include="Controllers\StageController.cs" />
     <Compile Include="Controllers\StatusController.cs" />
@@ -215,6 +216,14 @@
     <Compile Include="Migrations\201801181053344_AddSetRelation.cs" />
     <Compile Include="Migrations\201801181053344_AddSetRelation.Designer.cs">
       <DependentUpon>201801181053344_AddSetRelation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801190422132_AddPositionBranchIM.cs" />
+    <Compile Include="Migrations\201801190422132_AddPositionBranchIM.Designer.cs">
+      <DependentUpon>201801190422132_AddPositionBranchIM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801190613307_UpdateTables.cs" />
+    <Compile Include="Migrations\201801190613307_UpdateTables.Designer.cs">
+      <DependentUpon>201801190613307_UpdateTables.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -287,6 +296,8 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Project\Index.cshtml" />
+    <Content Include="Views\Project\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201801150644101_InitialCreate.resx">
@@ -300,6 +311,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801181053344_AddSetRelation.resx">
       <DependentUpon>201801181053344_AddSetRelation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801190422132_AddPositionBranchIM.resx">
+      <DependentUpon>201801190422132_AddPositionBranchIM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801190613307_UpdateTables.resx">
+      <DependentUpon>201801190613307_UpdateTables.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -316,7 +333,7 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Views\Project\" />
+    <Folder Include="Views\Position\" />
     <Folder Include="Views\Stage\" />
     <Folder Include="Views\Status\" />
     <Folder Include="Views\Task\" />

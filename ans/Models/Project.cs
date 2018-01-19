@@ -12,18 +12,30 @@ namespace ans.Models
         public Guid Id { get; set; }
 
         //Название проекта
+        [Required(ErrorMessage = "Это обязательное поле")]
+        [Display(Name = "Название проекта")]
+        [StringLength(200, MinimumLength = 3, ErrorMessage = "Поле не должно быть пустым!")]
         public string Name { get; set; }
 
-        //Дата закрытия проекта
+        //Дата завершения проекта
+        [Required]
+        [Display(Name = "Дата завершения проекта")]
+        [DataType(DataType.DateTime)]
         public DateTime DateEnd { get; set; }
 
         //Дата начала проекта
+        [Required]
+        [Display(Name = "Дата начала проекта")]
+        [DataType(DataType.DateTime)]
         public DateTime DateStart { get; set; }
 
         //Процент выполнения проекта
+        [Display(Name = "Процент выполнения проекта")]
         public int Procent { get; set; }
 
         //Ссылка на проекта
+        [Required]
+        [Display(Name = "Ссылка на проект")]
         public string LinkProject { get; set; }
 
         //Ссылка на команду проекта

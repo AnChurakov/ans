@@ -5,6 +5,7 @@ using System.Web;
 using System.Data.Entity;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using ans.Models;
 
 namespace ans.Models
 {
@@ -16,6 +17,10 @@ namespace ans.Models
         //Название команды
         public string Name { get; set; }
 
+        //Ссылка на пользователя
+        public virtual ApplicationUser User { get; set; }
+
+        //Ссылка на проект
         public virtual Project Projects { get; set; }
 
     }
