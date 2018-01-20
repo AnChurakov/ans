@@ -11,17 +11,17 @@ namespace ans.Models
 {
     public class Team : DbContext
     {
-        [Key, ForeignKey("Projects")]
+        
         public Guid Id { get; set; }
 
         //Название команды
+        [Required(ErrorMessage = "Это обязательное поле")]
+        [DataType(DataType.Text)]
+        [Display(Name = "Название команды")]
         public string Name { get; set; }
 
-        //Ссылка на пользователя
-        public virtual ApplicationUser User { get; set; }
-
-        //Ссылка на проект
-        public virtual Project Projects { get; set; }
+        //Ссылка на пользователей
+        public virtual ICollection<ApplicationUser> Users { get; set; }
 
     }
 }

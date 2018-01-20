@@ -12,7 +12,16 @@ namespace ans.Models
     {
         public Guid Id { get; set; }
 
+        //Описание задачи
+        [Required(ErrorMessage = "Это обязательное поле")]
+        [Display(Name = "Описание задачи")]
+        [DataType(DataType.Text)]
+        public string Description { get; set; }
+
         //Название задачи
+        [Required(ErrorMessage = "Это обязательное поле")]
+        [Display(Name = "Название задачи")]
+        [DataType(DataType.Text)]
         public string Name { get; set; }
 
         //Дата открытия задачи

@@ -17,6 +17,11 @@ namespace ans.Models
         [StringLength(200, MinimumLength = 3, ErrorMessage = "Поле не должно быть пустым!")]
         public string Name { get; set; }
 
+        [Required(ErrorMessage = "Это обязательное поле")]
+        [DataType(DataType.MultilineText)]
+        [Display(Name = "Описание проекта")]
+        public string Description { get; set; }
+
         //Дата завершения проекта
         [Display(Name = "Дата завершения проекта")]
         [DataType(DataType.DateTime)]

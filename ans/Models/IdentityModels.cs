@@ -17,7 +17,7 @@ namespace ans.Models
         public string Position { get; set; }
 
         //Ссылка на команду в которой состоит пользователь
-        public virtual ICollection<Team> Teams { get; set; }
+        public virtual Team Teams { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
