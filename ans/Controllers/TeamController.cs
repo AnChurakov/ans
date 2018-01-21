@@ -14,6 +14,12 @@ namespace ans.Controllers
         [Authorize]
         public ActionResult Index()
         {
+            ApplicationDbContext dbContext = new ApplicationDbContext();
+
+            var Users = dbContext.Users.ToList();
+
+            ViewBag.Users = Users;
+
             return View();
         }
 

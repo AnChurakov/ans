@@ -1,4 +1,5 @@
-﻿@model ans.Models.Team
+﻿@using ans.Models
+@model Team
 @{
     ViewBag.Title = "Добавление команды";
 }
@@ -35,7 +36,10 @@ else if (ViewBag.Check == 0)
         </div>
     </div>
 
-
+    foreach (ApplicationUser users in ViewBag.Users)
+    {
+        @users.Email<br />
+    }
 
 }
 @section Scripts {
