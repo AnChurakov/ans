@@ -1,12 +1,11 @@
 ﻿@using ans.Models
 @model Team
 @{
-    ViewBag.Title = "Добавление команды";
+    ViewBag.Title = "Добавление новой команды";
 }
 
 <h2>@ViewBag.Title</h2>
-
-@Html.Partial("~/Views/_LocalMenu.cshtml")<br />
+@Html.Partial("~/Views/_LocalMenu.cshtml")
 @if (ViewBag.Check == 1)
 {
     <div class="alert alert-success">@ViewBag.Message</div>
@@ -15,7 +14,6 @@ else if (ViewBag.Check == 0)
 {
     <div class="alert alert-danger">@ViewBag.Message</div>
 }
-<br />
 @using (Html.BeginForm("CreateTeam", "Team", FormMethod.Post))
 {
 
@@ -28,7 +26,7 @@ else if (ViewBag.Check == 0)
             @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
         </div>
     </div>
-<br />
+
 
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
@@ -36,12 +34,6 @@ else if (ViewBag.Check == 0)
         </div>
     </div>
 
-    foreach (ApplicationUser users in ViewBag.Users)
-    {
-        @users.Email<br />
-    }
 
-}
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
+
 }

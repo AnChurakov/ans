@@ -254,6 +254,7 @@
     <Compile Include="Models\Status.cs" />
     <Compile Include="Models\Task.cs" />
     <Compile Include="Models\Team.cs" />
+    <Compile Include="Models\TeamViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -322,7 +323,9 @@
     <Content Include="Views\Stage\Index.cshtml" />
     <Content Include="Views\_LocalMenu.cshtml" />
     <Content Include="Views\Task\Index.cshtml" />
+    <Content Include="Views\Team\CreateTeam.cshtml" />
     <Content Include="Views\Team\Index.cshtml" />
+    <Content Include="Views\Team\AddUser.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201801150644101_InitialCreate.resx">

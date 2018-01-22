@@ -11,8 +11,12 @@ namespace ans.Controllers
     {
         [Authorize]
         public ActionResult Index()
-        {            
-            return View();
+        {
+            ApplicationDbContext dbContext = new ApplicationDbContext();
+
+            var SelectUser = dbContext.Users.FirstOrDefault(a => a.Email == User.Identity.Name);
+
+            return View(SelectUser);
         }
 
     }

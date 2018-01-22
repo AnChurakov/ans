@@ -1,0 +1,51 @@
+﻿@using ans.Models
+@model TeamViewModel
+@{
+    ViewBag.Title = "Добавление участника в команду";
+}
+
+<h2>@ViewBag.Title</h2>
+@Html.Partial("~/Views/_LocalMenu.cshtml")
+
+@using (Html.BeginForm("AddUserInTeam", "Team", FormMethod.Post))
+{
+
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="form-group">
+
+        <div class="col-md-10">
+            <select class="form-control" name="IdTeams">
+                @foreach (Team team in Model.Teams)
+                {
+                    <option value="@team.Id">@team.Name</option>
+                }
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-md-2 control-label">Участник</label>
+
+        <div class="col-md-10">
+            <select class="form-control" name="IdUser">
+                @foreach (ApplicationUser users in Model.Users)
+                {
+                    <option value="@users.Id">@users.Email</option>
+                }
+            </select>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Добавить" class="btn btn-success" />
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,7 +1,12 @@
-﻿
+﻿@using ans.Models
+@model ApplicationUser
 @{
     ViewBag.Title = "Личный кабинет";
 }
 
 <h2>@ViewBag.Title</h2>
 @Html.Partial("~/Views/_LocalMenu.cshtml")
+
+<br />
+
+Вы состоите в команде : @Model.Teams.Name <br />

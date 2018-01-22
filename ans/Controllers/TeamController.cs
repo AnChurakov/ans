@@ -14,16 +14,42 @@ namespace ans.Controllers
         [Authorize]
         public ActionResult Index()
         {
-            ApplicationDbContext dbContext = new ApplicationDbContext();
-
-            var Users = dbContext.Users.ToList();
-
-            ViewBag.Users = Users;
-
             return View();
         }
 
+        [Authorize]
+        public ActionResult AddUser()
+        {
+            ApplicationDbContext dbContext = new ApplicationDbContext();
 
+            TeamViewModel AddInTeam = new TeamViewModel
+            {
+                Teams = dbContext.Teams.ToList(),
+                Users = dbContext.Users.ToList()
+            };
+
+            return View(AddInTeam);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public RedirectResult AddUserInTeam(Guid IdTeams, string IdUser)
+        {
+            ApplicationDbContext dbContext = new ApplicationDbContext();
+            
+            if (IdTeams != null && IdUser != null)
+            {
+                var SelectUser = dbContext.Users.FirstOrDefault(a => a.Id == IdUser);
+
+                var SelectTeam = dbContext.Teams.FirstOrDefault(s => s.Id == IdTeams);
+
+                SelectUser.Teams = SelectTeam;
+
+                dbContext.SaveChanges();
+            }
+
+            return Redirect("AddUser");
+        }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -32,13 +58,12 @@ namespace ans.Controllers
             if (ModelState.IsValid)
             {
                 ApplicationDbContext dbContext = new ApplicationDbContext();
-            
-
+           
                 Team t = new Team {
 
                     Id = Guid.NewGuid(),
                     Name = team.Name,
-                   
+         
                 };
                 dbContext.Teams.Add(t);
                 dbContext.SaveChanges();
