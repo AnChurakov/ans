@@ -31,6 +31,12 @@ namespace ans.Controllers
             return View(AddInTeam);
         }
 
+        /// <summary>
+        /// Добавление пользователя в команду
+        /// </summary>
+        /// <param name="IdTeams">id выбранной команды</param>
+        /// <param name="IdUser">id выбранного пользователя</param>
+        /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public RedirectResult AddUserInTeam(Guid IdTeams, string IdUser)
@@ -51,6 +57,11 @@ namespace ans.Controllers
             return Redirect("AddUser");
         }
 
+        /// <summary>
+        /// Создание новой команды
+        /// </summary>
+        /// <param name="team"></param>
+        /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> CreateTeam(Team team)

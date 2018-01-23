@@ -1,0 +1,58 @@
+﻿@using ans.Models
+@using Microsoft.AspNet.Identity;
+@using Microsoft.AspNet.Identity.EntityFramework;
+@{
+    ViewBag.Title = "Добавление ролей пользователю";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@Html.Partial("~/Views/_LocalMenu.cshtml")
+
+
+<form action="~/Role/AddRoleUser" method="post">
+    <br />
+
+    <div id="Users">
+        <select class="form-control" name="Users">
+            @foreach (ApplicationUser users in ViewBag.Users)
+            {
+                <option value="@users.Id">@users.Email</option>
+            }
+        </select>
+        <br />
+
+            <select class="form-control" name="Roles">
+                @foreach (IdentityRole role in ViewBag.Roles)
+                {
+                    <option value="@role.Id">@role.Name</option>
+                }
+            </select>
+
+        <button type="button" class="btn btn-primary" id="AddUser">Добавить нового пользователя</button>
+        <br />
+        </div>
+
+        <input type="submit" class="btn btn-success" value="Добавить" />
+
+</form>
+
+
+
+
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        var i = 0;
+
+
+        $("body").on("click", "#AddUser", function () {
+
+            var copy = $("#Users").clone();
+            $("#Users").after(copy);
+
+        });
+
+    });
+</script>
