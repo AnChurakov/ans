@@ -1,4 +1,5 @@
-﻿@model IEnumerable<ans.Models.Project>
+﻿@using ans.Models
+@model IEnumerable<Project>
 @{
     ViewBag.Title = "Проекты";
 }
@@ -9,29 +10,46 @@
 {
 <div class="panel panel-default">
     <div class="panel-heading">
-    @project.Name
-    
-        @if(project.Status.Name == "В разработке")
+        @project.Name
+
+        @if (project.Status.Name == "В разработке")
         {
             <span class="label label-primary">В разработке</span>
         }
 
-          @if(project.Status.Name == "Приостановлен")
+        @if (project.Status.Name == "Приостановлен")
         {
             <span class="label label-danger">В разработке</span>
         }
 
-          @if(project.Status.Name == "Завершен")
+        @if (project.Status.Name == "Завершен")
         {
             <span class="label label-success">В разработке</span>
         }
 
     </div>
     <div class="panel-body">
-       @project.Description
+        <h5>Описание проекта</h5>
+        <strong>@project.Description</strong> 
+        <br />
+
+        <strong>Команда проекта:</strong><span class="label label-default">@project.Team.Name</span>
+        <br />
+
+        <strong>В команду проекта требуются:</strong>
+        <br />
+
+        @{
+        var vac = project.Team.Vacancy.ToList();
+
+             foreach (var v in vac)
+             {
+            <span class="label label-danger">@v.Name</span>
+             }
+        }
     </div>
 
-   
+
 </div>
     <br /><br />
 }

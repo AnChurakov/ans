@@ -40,7 +40,7 @@ namespace ans.Models
         public DbSet<TaskProject> TaskProjects { get; set; }
         public DbSet<Status> Status { get; set; }
         public DbSet<Stage> Stage { get; set; }
-
+        public DbSet<Vacancy> Vacancy { get; set; }
 
         public static ApplicationDbContext Create()
         {

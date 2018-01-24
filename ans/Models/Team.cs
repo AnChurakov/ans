@@ -22,6 +22,7 @@ namespace ans.Models
 
         //Ссылка на пользователей
         public virtual ICollection<ApplicationUser> Users { get; set; }
-
+        
+        public virtual ICollection<Vacancy> Vacancy { get; set; }
     }
 }

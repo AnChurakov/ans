@@ -18,5 +18,7 @@ namespace ans.Models
         [Display(Name = "Название вакансии")]
         public string Name { get; set; }
 
+        public virtual ICollection<Team> Teams { get; set; }
+
     }
 }
