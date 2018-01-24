@@ -43,15 +43,18 @@ namespace ans.Models
         public string LinkProject { get; set; }
 
         //Ссылка на команду проекта
+        [Display(Name = "Команда проекта")]
         public virtual Team Team { get; set; }
 
         //Ссылка на этап проекта
+        [Display(Name = "Этап проекта")]
         public virtual Stage Stage { get; set; }
 
         //Ссылка на задачи проекта
         public virtual ICollection<TaskProject> TaskProjects { get; set; }
 
         //Ссылка на статус проекта
+        [Display(Name = "Статус проекта")]
         public virtual Status Status { get; set; }
     }
 }

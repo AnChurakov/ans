@@ -4,3 +4,34 @@
 }
 
 <h2>@ViewBag.Title</h2>
+
+@foreach(var project in Model)
+{
+<div class="panel panel-default">
+    <div class="panel-heading">
+    @project.Name
+    
+        @if(project.Status.Name == "В разработке")
+        {
+            <span class="label label-primary">В разработке</span>
+        }
+
+          @if(project.Status.Name == "Приостановлен")
+        {
+            <span class="label label-danger">В разработке</span>
+        }
+
+          @if(project.Status.Name == "Завершен")
+        {
+            <span class="label label-success">В разработке</span>
+        }
+
+    </div>
+    <div class="panel-body">
+       @project.Description
+    </div>
+
+   
+</div>
+    <br /><br />
+}

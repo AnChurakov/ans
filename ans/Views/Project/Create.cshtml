@@ -6,6 +6,15 @@
 
 <h2>@ViewBag.Title</h2>
 
+@if (ViewBag.Check == 1)
+{
+    <div class="alert alert-success">@ViewBag.Message</div>
+}
+else if (ViewBag.Check == 0)
+{
+    <div class="alert alert-danger">@ViewBag.Message</div>
+}
+
 @using (Html.BeginForm("CreateProject", "Project", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
@@ -17,7 +26,7 @@
             @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
         </div>
     </div>
-
+    <br />
     <div class="form-group">
         @Html.LabelFor(m => m.LinkProject, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
@@ -25,6 +34,65 @@
             @Html.ValidationMessageFor(m => m.LinkProject, "", new { @class = "text-danger" })
         </div>
     </div>
+    <br />
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Procent, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Procent, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Procent, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <br />
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Description, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Description, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Description, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <br />
+
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Team, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            <select class="form-control" name="team">
+                @foreach (Team team in ViewBag.Teams)
+                {
+                    <option value="@team.Id">@team.Name</option>
+                }
+            </select>
+        </div>
+    </div>
+    <br />
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Stage, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            <select class="form-control" name="stage">
+                @foreach (Stage stage in ViewBag.Stage)
+                {
+                    <option value="@stage.Id">@stage.Name</option>
+                }
+            </select>
+        </div>
+    </div>
+    <br />
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Status, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            <select class="form-control" name="status">
+                @foreach (Status status in ViewBag.Status)
+                {
+                    <option value="@status.Id">@status.Name</option>
+                }
+            </select>
+        </div>
+    </div>
+    <br />
 
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">

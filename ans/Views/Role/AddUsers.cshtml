@@ -13,7 +13,8 @@
 <form action="~/Role/AddRoleUser" method="post">
     <br />
 
-    <div id="Users">
+    <div id="Users" class="form-group">
+
         <select class="form-control" name="Users">
             @foreach (ApplicationUser users in ViewBag.Users)
             {
@@ -22,17 +23,23 @@
         </select>
         <br />
 
+
             <select class="form-control" name="Roles">
                 @foreach (IdentityRole role in ViewBag.Roles)
                 {
                     <option value="@role.Id">@role.Name</option>
                 }
             </select>
+        
 
-        <button type="button" class="btn btn-primary" id="AddUser">Добавить нового пользователя</button>
-        <br />
+       
+        <button type="button" class="btn btn-primary" id="AddUser"><span class="glyphicon glyphicon-plus"></span></button>
+        <button type="button" class="btn btn-danger" id="DeleteBlock"><span class="glyphicon glyphicon-trash"></span></button>
+        
+        
+
         </div>
-
+    <br />
         <input type="submit" class="btn btn-success" value="Добавить" />
 
 </form>
@@ -44,8 +51,13 @@
 <script type="text/javascript">
     $(document).ready(function () {
 
-        var i = 0;
+        $("body").on('click', '#DeleteBlock', function () {
 
+            var parent = $(this).parent().parent();
+
+            parent.remove();
+
+        });
 
         $("body").on("click", "#AddUser", function () {
 

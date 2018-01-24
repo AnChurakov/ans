@@ -43,7 +43,7 @@ namespace ans.Controllers
 
             foreach (var user in Users)
             {
-                foreach(var role in Roles)
+                foreach (var role in Roles)
                 {
                     var SelectRoles = dbContext.Roles.FirstOrDefault(r => r.Id == role);
 
@@ -52,10 +52,10 @@ namespace ans.Controllers
                     {
                         userManager.AddToRole(user, SelectRoles.Name);
                     }
-                   
+
                 }
             }
-            
+
 
             dbContext.SaveChanges();
 
